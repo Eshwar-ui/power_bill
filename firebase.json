@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"my-power-bill","appId":"1:337419318717:android:9b818f240af1d4f0994ed4","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"my-power-bill","configurations":{"android":"1:337419318717:android:9b818f240af1d4f0994ed4","ios":"1:337419318717:ios:389be8f74abdb235994ed4"}}}}}}

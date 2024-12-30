@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "337419318717",
+    "project_id": "my-power-bill",
+    "storage_bucket": "my-power-bill.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337419318717:android:9b818f240af1d4f0994ed4",
+        "android_client_info": {
+          "package_name": "com.power_bill.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_hJNrW1MfTClsJ9cooPJDA2gGn-xO1pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
