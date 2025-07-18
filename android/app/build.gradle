@@ -1,16 +1,15 @@
 plugins {
     id "com.android.application"
-    // START: FlutterFire Configuration
-    id 'com.google.gms.google-services'
-    // END: FlutterFire Configuration
     id "kotlin-android"
+    // Firebase configuration
+    id 'com.google.gms.google-services'
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
 }
 
 android {
     namespace = "com.power_bill.app"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = flutter.compileSdkVersion // Make sure compileSdkVersion in `local.properties` is set correctly
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -19,26 +18,29 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = "1.8"
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.power_bill.app"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23
-        targetSdk = flutter.targetSdkVersion
+        minSdkVersion 23 // Set to 23 as required by Firebase Auth
+        targetSdk = flutter.targetSdkVersion // Ensure targetSdkVersion is properly set in `local.properties`
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            // Enables code shrinking, obfuscation, and optimization for release builds.
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug // Replace with release signing config for production
         }
+    }
+
+    dependencies {
+        // Add necessary dependencies if not already included
     }
 }
 
@@ -46,4 +48,5 @@ flutter {
     source = "../.."
 }
 
+// Firebase services configuration
 apply plugin: 'com.google.gms.google-services'

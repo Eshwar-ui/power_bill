@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ServiceButton extends StatelessWidget {
   final String title;
@@ -16,28 +17,31 @@ class ServiceButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Theme.of(context).colorScheme.onPrimary,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+      style: ButtonStyle(
+        backgroundColor:
+            WidgetStatePropertyAll(Theme.of(context).colorScheme.primary),
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.0.w),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image.asset(
               fit: BoxFit.cover,
               logoPath,
-              width: 50,
-              height: 50,
+              width: 50.w,
+              height: 50.h,
             ),
-            const SizedBox(width: 8.0),
+            SizedBox(width: 15.0.w),
             Text(
+              overflow: TextOverflow.ellipsis,
               title,
+              softWrap: true,
               style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 16.0.sp,
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).colorScheme.inversePrimary),
             ),

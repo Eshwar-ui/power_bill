@@ -37,6 +37,15 @@ dependencies:
   cupertino_icons: ^1.0.8
   firebase_core: ^3.9.0
   firebase_auth: ^5.3.4
+  cloud_firestore: ^5.6.0
+  provider: ^6.1.2
+  shared_preferences: ^2.3.5
+  intl: ^0.20.1
+  image_picker: ^1.1.2
+  firebase_storage: ^12.4.1
+  flutter_screenutil: ^5.9.0
+  url_launcher: ^6.3.1
+  file_picker: ^8.1.7
 
 
 dev_dependencies:
@@ -48,7 +57,14 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: "^0.14.3"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "lib/assets/images/telangana logo.png"
+  min_sdk_android: 21 
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -65,6 +81,7 @@ flutter:
   assets:
     - lib/assets/images/
     - lib/assets/service_logos/
+    - lib/assets/util_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
